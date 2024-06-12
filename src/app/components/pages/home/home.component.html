@@ -1,6 +1,6 @@
 <section id="home">
 
-    <app-view-toggle [viewState]="viewState" />
+    <app-view-toggle [viewState]="viewState()" (viewStateEmitter)="toggleViewState($event)" />
 
     <app-posts [posts]="posts()"/>
 

@@ -20,7 +20,7 @@ export class HomeComponent {
 
   // Local variables
   readonly posts : Signal<Post[]> = signal([]);
-  viewState : ViewState = 'list';
+  viewState = signal<ViewState>('list');
 
   // Services
   postsService : PostsService = inject(PostsService);
@@ -30,4 +30,9 @@ export class HomeComponent {
     this.posts = this.postsService.getAllPosts();
   }
 
+  // Methods
+  toggleViewState(viewState : ViewState) {
+    this.viewState.set(viewState);
+    console.log(viewState)
+  }
 }
