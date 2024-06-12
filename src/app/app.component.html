@@ -1,8 +1,8 @@
-<section class="{{theme}}">
+<section class="{{theme}}" [ngClass]="theme === 'dark' ? 'text-white' : 'text-black'">
 
     <mat-sidenav-container class="min-h-screen">
 
-        <mat-sidenav mode="over" role="navigation" [opened]="isMenuOpened()">
+        <mat-sidenav mode="side" role="navigation" opened>
 
             <mat-nav-list class="min-h-screen bg-blue-400">
 
@@ -11,16 +11,16 @@
 
                 <mat-divider />
 
-                @for (item of list; track item) {
-                <a mat-list-item>{{ item }}</a>
+                @for (navItem of navList; track navItem.name) {
+                <a routerLink="{{ navItem.path }}" mat-list-item>{{ navItem.name }}</a>
                 }
 
             </mat-nav-list>
         </mat-sidenav>
 
         <mat-sidenav-content role="main" class="min-h-screen bg-slate-50 dark:bg-gray-950">
-            <main>
-                <app-header (menuToggleEmitter)="toggleMenuState()" (themeEmitter)="toggleTheme()" [theme]="theme" />
+            <main class="max-w-[90%] mx-auto">
+                <app-header (themeEmitter)="toggleTheme()" [theme]="theme" />
                 <router-outlet />
             </main>
         </mat-sidenav-content>

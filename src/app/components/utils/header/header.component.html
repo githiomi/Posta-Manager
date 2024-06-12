@@ -1,0 +1,9 @@
+<header id="header" class="flex justify-between items-center">
+
+   <h2 class="bold text-black dark:text-white uppercase text-xl my-0 py-0">Blog Post Manager</h2>
+
+   <button mat-mini-fab color="warn" (click)="toggleTheme()">
+      <mat-icon> {{ theme() === 'dark' ? 'brightness_5' : 'brightness_2' }}</mat-icon>
+   </button>
+
+</header>
