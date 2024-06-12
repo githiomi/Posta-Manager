@@ -14,6 +14,7 @@ export class HeaderComponent {
   @Output()
   themeEmitter = new EventEmitter();
 
+  applicationTitle = input.required();
   theme = input.required();
 
   toggleTheme = (): void => this.themeEmitter.emit();

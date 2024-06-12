@@ -9,8 +9,10 @@
         <mat-sidenav-content role="main" class="min-h-screen bg-slate-50 dark:bg-gray-950">
 
             <main class="max-w-[90%] mx-auto">
-                <app-header (themeEmitter)="toggleTheme()" [theme]="theme" />
+                <app-header [applicationTitle]="title" (themeEmitter)="toggleTheme()" [theme]="theme" />
                 <router-outlet />
+
+                {{ posts() | json }}
             </main>
 
         </mat-sidenav-content>
