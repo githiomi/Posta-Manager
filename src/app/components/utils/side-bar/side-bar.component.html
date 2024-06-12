@@ -1,0 +1,18 @@
+<mat-nav-list class="min-h-screen bg-[#8B118B]">
+
+    <!--Logo-->
+    <img ngSrc="/fintrellis_logo.png" alt="Application Logo" width="200" height="200" priority>
+
+    <mat-divider/>
+
+    @for (navItem of navLinks(); track navItem.name) {
+        <a mat-list-item routerLink="{{ navItem.path}}">
+            <div class="flex items-center">
+                <mat-icon class="mx-4">{{ navItem.icon }}</mat-icon>
+                {{
+                    navItem.name
+                }}
+            </div>
+        </a>
+    }
+</mat-nav-list>
