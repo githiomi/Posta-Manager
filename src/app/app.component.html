@@ -11,8 +11,6 @@
             <main class="max-w-[90%] mx-auto">
                 <app-header [applicationTitle]="title" (themeEmitter)="toggleTheme()" [theme]="theme" />
                 <router-outlet />
-
-                {{ posts() | json }}
             </main>
 
         </mat-sidenav-content>

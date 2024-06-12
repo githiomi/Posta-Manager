@@ -3,8 +3,8 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
    {
       path: "",
-      loadComponent: () => import('./components/pages/posts/posts.component').then(component => component.PostsComponent),
-      title: "Fintrellis Blog Posts"
+      loadComponent: () => import('./components/pages/home/home.component').then(component => component.HomeComponent),
+      title: "Angular Blog Posts | Home"
    },
    {
       path: "new",

@@ -1,15 +1,10 @@
 <section id="posts">
 
-    <div class="bg-slate-100 dark:bg-gray-800 py-4 px-2 rounded-xl text-black dark:text-white text-sm uppercase">
-        Toggle View Mode:
-        <mat-button-toggle-group class="mx-4 text-black dark:text-white" name="viewMode" aria-label="Posts View Mode">
-            <mat-button-toggle checked value="grid">
-                <mat-icon class="text-black dark:text-white">view_module</mat-icon>
-            </mat-button-toggle>
-            <mat-button-toggle value="list">
-                <mat-icon class="text-black dark:text-white">view_list</mat-icon>
-            </mat-button-toggle>
-        </mat-button-toggle-group>
-    </div>
+    These are the posts:
+    @for (post of posts(); track post.id) {
+        <div class="bg-red-500 m-4 rounded-2xl">
+            {{ post | json }}
+        </div>
+    }
 
 </section>
