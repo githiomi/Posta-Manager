@@ -7,8 +7,11 @@
     "open": "ng serve -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "json-server": "json-server --watch db/posts.json --port 8000",
+    "json-server": "json-server --watch db/file.json --port 8000",
     "serve:ssr:angular_blog_post": "node dist/angular_blog_post/server/server.mjs"
+  },
+  "scarfSettings" : {
+    "enabled" : false
   },
   "private": true,
   "dependencies": {
@@ -25,6 +28,7 @@
     "@angular/router": "^18.0.0",
     "@angular/ssr": "^18.0.3",
     "express": "^4.18.2",
+    "ngx-lottie": "^11.0.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

@@ -1,10 +1,15 @@
 <section id="posts">
 
-    These are the posts:
-    @for (post of posts(); track post.id) {
-        <div class="bg-red-500 m-4 rounded-2xl">
-            {{ post | json }}
-        </div>
+    @if (posts().length != 0) {
+        These are the posts:
+        @for (post of posts(); track post.id) {
+            <div class="bg-red-500 m-4 rounded-2xl">
+                {{ post | json }}
+            </div>
+        }
+    } @else {
+        <h1 class="text-red-600">No posts were found</h1>
+
     }
 
 </section>

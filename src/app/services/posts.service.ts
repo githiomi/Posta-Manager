@@ -16,17 +16,15 @@ export class PostsService {
 
     constructor() {
         // Get data from JSON server
-        const endpoint = '/posts';
+        const endpoint:string = '/posts';
         this.posts$ = this.httpClient.get<Post[]>(`${this.postsUrl}${endpoint}`).pipe(
             tap(console.log)
         );
         this.posts = toSignal(this.posts$, {
-            initialValue: []
+            initialValue: [] as Post[]
         })
     }
 
     // Get all posts
-    getAllPosts = () : Signal<Post[]> => {
-        return this.posts;
-    }
+    getAllPosts = () : Signal<Post[]> => this.posts
 }
